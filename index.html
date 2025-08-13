@@ -1,14 +1,474 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Churches of Christ National Lectureship 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold">COCNL 2026</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-slate-300 transition-colors">Home</a>
+                    <a href="#registration" class="hover:text-slate-300 transition-colors">Registration</a>
+                    <a href="#hotel" class="hover:text-slate-300 transition-colors">Hotel</a>
+                    <a href="#vendors" class="hover:text-slate-300 transition-colors">Vendors</a>
+                    <a href="#contact" class="hover:text-slate-300 transition-colors">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 hover:text-slate-300">Home</a>
+                <a href="#registration" class="block py-2 hover:text-slate-300">Registration</a>
+                <a href="#hotel" class="block py-2 hover:text-slate-300">Hotel</a>
+                <a href="#vendors" class="block py-2 hover:text-slate-300">Vendors</a>
+                <a href="#contact" class="block py-2 hover:text-slate-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <span class="inline-block bg-slate-700/50 backdrop-blur-sm text-slate-200 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                    March 8-12, 2026 • Atlanta, Georgia
+                </span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                80th Annual <span class="text-slate-300">"Historical"</span><br>
+                <span class="bg-gradient-to-r from-slate-200 to-white bg-clip-text text-transparent">
+                    National Lectureship
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Join us for five transformative days of worship, fellowship, and spiritual growth as we celebrate 
+                eight decades of God's faithfulness in the Churches of Christ community.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#registration" class="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 text-lg">
+                    Register Now
+                </a>
+                <a href="#hotel" class="border-2 border-slate-300 text-slate-200 hover:bg-slate-300 hover:text-slate-900 font-bold py-4 px-8 rounded-lg transition-all duration-200 text-lg">
+                    Hotel Information
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Info Cards -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">Event Highlights</h2>
+            <p class="text-center text-gray-600 mb-12">Join us for five days of fellowship, worship, and spiritual growth</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-lg border border-slate-200">
+                    <p class="text-slate-800 font-semibold text-lg">📅 March 8-12, 2026</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-lg border border-slate-200">
+                    <p class="text-slate-800 font-semibold text-lg">📍 Atlanta, Georgia</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-lg border border-slate-200">
+                    <p class="text-slate-800 font-semibold text-lg">🏨 Courtland Grand Hotel</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-50 rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">5 Days</h3>
+                    <p class="text-gray-600">March 8-12, 2026</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">🏨</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Premium Venue</h3>
+                    <p class="text-gray-600">Courtland Grand Hotel</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">🎤</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Inspiring Speakers</h3>
+                    <p class="text-gray-600">Renowned Bible scholars</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-lg p-6 text-center shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="w-16 h-16 bg-slate-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white text-2xl">🤝</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Fellowship</h3>
+                    <p class="text-gray-600">Connect with believers nationwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-16 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-slate-200">Registration Information</h2>
+                <p class="text-xl text-slate-100 max-w-3xl mx-auto">
+                    All attendees must register to comply with insurance regulations. Choose the option that works best for you.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Individual Registration -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+                    <h3 class="text-2xl font-bold text-slate-200 mb-6 flex items-center">
+                        <span class="mr-3">👤</span>
+                        Individual Registration
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+                            <span class="text-slate-100">Early Bird (Until Dec 31, 2025)</span>
+                            <span class="text-slate-300 font-bold">$190</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+                            <span class="text-slate-100">Regular (Jan 1 - Feb 28, 2026)</span>
+                            <span class="text-slate-300 font-bold">$210</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+                            <span class="text-slate-100">Late (March 1+)</span>
+                            <span class="text-slate-300 font-bold">$245</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-slate-100">On-Site Registration</span>
+                            <span class="text-slate-300 font-bold">$260</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Georgia Residents -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+                    <h3 class="text-2xl font-bold text-slate-200 mb-6 flex items-center">
+                        <span class="mr-3">🍑</span>
+                        Georgia Residents
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+                            <span class="text-slate-100">Early Bird Local (Until Dec 31)</span>
+                            <span class="text-slate-300 font-bold">$175</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-slate-700/50">
+                            <span class="text-slate-100">Regular Local (Jan 1+)</span>
+                            <span class="text-slate-300 font-bold">$195</span>
+                        </div>
+                        <div class="bg-slate-100/20 rounded-lg p-4 mt-4">
+                            <p class="text-slate-200 text-sm">
+                                <strong>Note:</strong> Name, address, and phone number must be verified for Georgia residents to receive discounted registration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Events -->
+            <div class="bg-gradient-to-r from-slate-100/20 to-slate-200/20 rounded-2xl p-8 border border-slate-300/30">
+                <h3 class="text-2xl font-bold text-slate-200 mb-6 flex items-center">
+                    <span class="mr-3">🎉</span>
+                    Special Events
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-slate-900 text-2xl">🎵</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2">Sunday Songfest</h4>
+                        <p class="text-slate-100 text-sm mb-2">March 8, 2026 • 4:30-6:00 PM</p>
+                        <p class="text-slate-300 font-bold">FREE</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-slate-900 text-2xl">👩</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2">Women's Luncheon</h4>
+                        <p class="text-slate-100 text-sm mb-2">March 11, 2026 • 12:00 PM</p>
+                        <p class="text-slate-300 font-bold">$60 (On-Site Only)</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-slate-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-slate-900 text-2xl">🍽️</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2">John O. Williams Banquet</h4>
+                        <p class="text-slate-100 text-sm mb-2">March 12, 2026 • 6:00 PM</p>
+                        <p class="text-slate-300 font-bold">$75</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Section -->
+    <section id="hotel" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Hotel Information</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Stay at the beautiful Courtland Grand Hotel in downtown Atlanta with special lectureship rates.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-slate-50 to-slate-50 rounded-2xl p-8 shadow-lg border border-slate-100">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                            <span class="mr-3">🏨</span>
+                            Courtland Grand Hotel
+                        </h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <span class="text-slate-600 mr-3 mt-1">📍</span>
+                                <div>
+                                    <p class="font-semibold text-gray-900">165 Courtland Street NE</p>
+                                    <p class="text-gray-600">Atlanta, GA 30303</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-slate-600 mr-3">📞</span>
+                                <p class="text-gray-900">(404) 659-6500</p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-slate-600 mr-3">💰</span>
+                                <p class="text-gray-900"><strong>$159/night</strong> (Single or Double Occupancy)</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Reservation Details:</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Check-in: 4:00 PM, March 8, 2026</li>
+                                <li>• Check-out: 11:00 AM, March 12, 2026</li>
+                                <li>• One night room and tax charged at reservation</li>
+                                <li>• No refunds granted</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-slate-900 text-white rounded-lg p-4 text-center">
+                            <p class="font-semibold mb-2">Make Reservations:</p>
+                            <p class="text-slate-200 text-lg font-bold">(888) 310-7807</p>
+                            <p class="text-sm text-slate-200 mt-2">
+                                Mention "Churches of Christ National Lectureship" for group rate
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img 
+                        src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&h=400"
+                        alt="Elegant hotel lobby with modern furnishings"
+                        class="w-full h-96 object-cover rounded-2xl shadow-xl"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vendors Section -->
+    <section id="vendors" class="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Vendor Information</h2>
+                <p class="text-xl text-gray-600">Join us as a vendor and connect with thousands of attendees</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Single Table</h3>
+                    <div class="text-3xl font-bold text-slate-600 mb-4">$250</div>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            One 6-foot table
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Prime location
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Access to all attendees
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-300 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-slate-400 text-slate-900 px-4 py-2 rounded-full text-sm font-bold">POPULAR</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Two Tables</h3>
+                    <div class="text-3xl font-bold text-slate-600 mb-4">$350</div>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Two 6-foot tables
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            More display space
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Better value per table
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Three Tables</h3>
+                    <div class="text-3xl font-bold text-slate-600 mb-4">$450</div>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Three 6-foot tables (MAX)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Maximum display space
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            Best value overall
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-slate-800 to-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Contact Information</h2>
+                <p class="text-xl text-slate-100">Get in touch with us for registration, hotel, or vendor questions</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-xl font-bold text-slate-200 mb-6">Contact Details</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-slate-300 mr-3">📞</span>
+                            <span class="text-slate-100">(800) 609-6211</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-slate-300 mr-3">✉️</span>
+                            <span class="text-slate-100">cocnl@gmail.com</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-slate-300 mr-3 mt-1">📍</span>
+                            <div class="text-slate-100">
+                                <p>Churches of Christ National Lectureship</p>
+                                <p>The UPS Store</p>
+                                <p>289 Jonesboro Road, Box #199</p>
+                                <p>McDonough, GA 30253</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <h3 class="text-xl font-bold text-slate-200 mb-6">Important Dates</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center text-slate-100">
+                            <span class="text-slate-300 mr-3">📅</span>
+                            <span><strong>Event:</strong> March 8-12, 2026</span>
+                        </div>
+                        <div class="flex items-center text-slate-100">
+                            <span class="text-slate-300 mr-3">💰</span>
+                            <span><strong>Early Bird Ends:</strong> December 31, 2025</span>
+                        </div>
+                        <div class="flex items-center text-slate-100">
+                            <span class="text-slate-300 mr-3">📝</span>
+                            <span><strong>Mail Registration Deadline:</strong> February 7, 2026</span>
+                        </div>
+                        <div class="flex items-center text-slate-100">
+                            <span class="text-slate-300 mr-3">🏨</span>
+                            <span><strong>Hotel Reservations:</strong> (888) 310-7807</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-4 text-slate-200 mb-4">
+                    <div class="flex items-center">
+                        <span class="mr-2">📅</span>
+                        <span class="font-semibold">March 8-12, 2026</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="mr-2">📍</span>
+                        <span class="font-semibold">Atlanta, GA</span>
+                    </div>
+                </div>
+                <p class="text-slate-400 text-sm">
+                    © 2026 Churches of Christ National Lectureship. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>
