@@ -1,13 +1,403 @@
-<!doctype html>
+=<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Churches of Christ National Lectureship 2026</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #475569, #1e293b);
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1e293b;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-gray {
+            background: #f8fafc;
+        }
+        
+        .section-dark {
+            background: #1e293b;
+            color: white;
+        }
+        
+        .section h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .price-row:last-child {
+            border-bottom: none;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #2563eb;
+        }
+        
+        .price-green {
+            color: #059669;
+        }
+        
+        .note {
+            background: #f0fdf4;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #059669;
+        }
+        
+        .hotel-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .hotel-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .hotel-details p {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .reservation-box {
+            background: #1e293b;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .reservation-box p:first-child {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reservation-box .phone {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        
+        .hotel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .contact-item h4 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item p {
+            opacity: 0.9;
+        }
+        
+        .footer {
+            background: #000;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hotel-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Churches of Christ National Lectureship</h1>
+        <p>March 8-12, 2026 • Atlanta, Georgia</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>80th Annual "Historical" National Lectureship</h2>
+        <p>Join us for five transformative days of worship, fellowship, and spiritual growth as we celebrate eight decades of God's faithfulness</p>
+        <div class="buttons">
+            <button class="btn btn-primary">Register Now</button>
+            <button class="btn btn-secondary">Hotel Information</button>
+        </div>
+    </section>
+
+    <!-- Registration Pricing -->
+    <section class="section section-gray">
+        <h3>Registration Pricing</h3>
+        
+        <div class="grid grid-2">
+            <!-- Individual Registration -->
+            <div class="card">
+                <h4>Individual Registration</h4>
+                <div class="price-row">
+                    <span>Early Bird (Until Dec 31, 2025)</span>
+                    <span class="price">$190</span>
+                </div>
+                <div class="price-row">
+                    <span>Regular (Jan 1 - Feb 28, 2026)</span>
+                    <span class="price">$210</span>
+                </div>
+                <div class="price-row">
+                    <span>Late (March 1+)</span>
+                    <span class="price">$245</span>
+                </div>
+                <div class="price-row">
+                    <span>On-Site Registration</span>
+                    <span class="price">$260</span>
+                </div>
+            </div>
+
+            <!-- Georgia Residents -->
+            <div class="card">
+                <h4>Georgia Residents</h4>
+                <div class="price-row">
+                    <span>Early Bird Local (Until Dec 31)</span>
+                    <span class="price price-green">$175</span>
+                </div>
+                <div class="price-row">
+                    <span>Regular Local (Jan 1+)</span>
+                    <span class="price price-green">$195</span>
+                </div>
+                <div class="note">
+                    <p><strong>Note:</strong> Address verification required for Georgia resident discount</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hotel Information -->
+    <section class="section">
+        <h3>Hotel Information</h3>
+        
+        <div class="hotel-card">
+            <div class="hotel-info">
+                <div class="hotel-details">
+                    <h4>Courtland Grand Hotel</h4>
+                    <p><strong>Address:</strong> 165 Courtland Street NE, Atlanta, GA 30303</p>
+                    <p><strong>Phone:</strong> (404) 659-6500</p>
+                    <p><strong>Rate:</strong> $159/night (Single or Double Occupancy)</p>
+                    
+                    <div class="reservation-box">
+                        <p>Make Reservations:</p>
+                        <p class="phone">(888) 310-7807</p>
+                        <p>Mention "Churches of Christ National Lectureship"</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <img 
+                        src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&h=300"
+                        alt="Hotel lobby"
+                        class="hotel-image"
+                    />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="section section-dark">
+        <h3>Contact Information</h3>
+        
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>Phone</h4>
+                <p>(800) 609-6211</p>
+            </div>
+            
+            <div class="contact-item">
+                <h4>Email</h4>
+                <p>cocnl@gmail.com</p>
+            </div>
+            
+            <div class="contact-item">
+                <h4>Address</h4>
+                <p>
+                    289 Jonesboro Road, Box #199<br>
+                    McDonough, GA 30253
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Churches of Christ National Lectureship. All rights reserved.</p>
+    </footer>
+</body>
 </html>
