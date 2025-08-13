@@ -1,11 +1,11 @@
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-gradient-to-r from-slate-900 via-black to-slate-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-slate-200 mb-4">Contact Information</h3>
+            <h3 className="text-xl font-bold mb-4 text-slate-200">Contact Information</h3>
             <div className="space-y-2 text-slate-300">
               <p className="flex items-center">
                 <span className="mr-2">📞</span>
@@ -15,69 +15,50 @@ export default function Footer() {
                 <span className="mr-2">✉️</span>
                 cocnl@gmail.com
               </p>
-              <div className="flex items-start">
+              <p className="flex items-start">
                 <span className="mr-2 mt-1">📍</span>
-                <div>
-                  <p>Churches of Christ National Lectureship</p>
-                  <p>The UPS Store</p>
-                  <p>289 Jonesboro Road, Box #199</p>
-                  <p>McDonough, GA 30253</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Event Details */}
-          <div>
-            <h3 className="text-lg font-semibold text-slate-200 mb-4">Event Details</h3>
-            <div className="space-y-2 text-slate-300">
-              <p className="flex items-center">
-                <span className="mr-2">📅</span>
-                March 8-12, 2026
-              </p>
-              <p className="flex items-center">
-                <span className="mr-2">📍</span>
-                Atlanta, Georgia
-              </p>
-              <p className="flex items-center">
-                <span className="mr-2">🏨</span>
-                Courtland Grand Hotel
-              </p>
-              <p className="flex items-center">
-                <span className="mr-2">🎉</span>
-                80th Annual Lectureship
+                <span>
+                  289 Jonesboro Road, Box #199<br />
+                  McDonough, GA 30253
+                </span>
               </p>
             </div>
           </div>
 
-          {/* Important Dates */}
+          {/* Event Info */}
           <div>
-            <h3 className="text-lg font-semibold text-slate-200 mb-4">Important Dates</h3>
+            <h3 className="text-xl font-bold mb-4 text-slate-200">Event Details</h3>
             <div className="space-y-2 text-slate-300">
-              <p>Early Bird Ends: Dec 31, 2025</p>
-              <p>Regular Registration: Jan 1 - Feb 28</p>
-              <p>Late Registration: March 1+</p>
-              <p>Mail Deadline: February 7, 2026</p>
+              <p>March 8-12, 2026</p>
+              <p>Courtland Grand Hotel</p>
+              <p>Atlanta, Georgia</p>
+              <p className="font-semibold text-slate-200">"One Lord… One Faith… One Baptism"</p>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-4 text-slate-200">Quick Links</h3>
+            <div className="space-y-2 text-slate-300">
+              <p>Registration Information</p>
+              <p>Hotel Reservations</p>
+              <p>Vendor Information</p>
+              <p>Contact Us</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
-          <div className="flex items-center justify-center space-x-4 text-slate-200 mb-4">
-            <div className="flex items-center">
-              <span className="mr-2">📅</span>
-              <span className="font-semibold">March 8-12, 2026</span>
-            </div>
-            <div className="flex items-center">
-              <span className="mr-2">📍</span>
-              <span className="font-semibold">Atlanta, GA</span>
-            </div>
-          </div>
-          <p className="text-slate-400 text-sm">
-            © 2026 Churches of Christ National Lectureship. All rights reserved.
+          <p className="text-slate-400">
+            &copy; 2026 Churches of Christ National Lectureship. All rights reserved.
+          </p>
+          <p className="text-slate-500 text-sm mt-2">
+            80th Annual "Historical" National Lectureship
           </p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
